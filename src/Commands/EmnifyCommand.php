@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace LaravelLatam\Emnify\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class EmnifyCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'emnify';
 
     public $description = 'My command';
 
