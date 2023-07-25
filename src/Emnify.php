@@ -4,5 +4,4 @@ namespace LaravelLatam\Emnify;
 
 class Emnify
 {
-    
 }
