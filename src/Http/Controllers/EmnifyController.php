@@ -26,7 +26,6 @@ class EmnifyController extends Controller
     public function index()
     {
 
-        return view('Emnify::index');
         /* [
             'EmnifyKey' => config('cashier.key'),
             'payment' => new Payment(
@@ -42,11 +41,11 @@ class EmnifyController extends Controller
             ),
             'redirect' => request('redirect'),
         ]);*/
+        return view('emnify::index');
     }
 
     public function show($id)
     {
-        return $id;
         /*
         return view('cashier::payment', [
             'EmnifyKey' => config('cashier.key'),
@@ -55,5 +54,7 @@ class EmnifyController extends Controller
             ),
             'redirect' => request('redirect'),
         ]);*/
+        return $id;
     }
+
 }
