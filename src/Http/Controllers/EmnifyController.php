@@ -56,5 +56,4 @@ class EmnifyController extends Controller
         ]);*/
         return $id;
     }
-
 }
