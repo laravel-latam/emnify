@@ -2,7 +2,6 @@
 
 namespace LaravelLatam\Emnify;
 
-use Emnify\EmnifySdk\Api\AuthenticationApi;
 use Emnify\EmnifySdk\Api\EndpointApi;
 use Emnify\EmnifySdk\Configuration;
 use Exception;
@@ -28,7 +27,6 @@ class Emnify
 
         try {
             $result = $apiInstance->getEndpoints($q, $sort, $page, $per_page);
-            print_r($result);
             return collect($result);
         } catch (Exception $e) {
             throw new Exception('Exception when calling EndpointApi->getEndpoints: ', $e->getMessage());
