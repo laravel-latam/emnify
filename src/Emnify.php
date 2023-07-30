@@ -2,7 +2,6 @@
 
 namespace LaravelLatam\Emnify;
 
-use Emnify\EmnifySdk\Api\AuthenticationApi;
 use Emnify\EmnifySdk\Api\EndpointApi;
 use Emnify\EmnifySdk\Configuration;
 use Exception;
@@ -20,7 +19,7 @@ class Emnify
             ->setAccessToken($token);
     }
 
-    public function endpoints($q=null, $sort=null, $page=null, $per_page=null)
+    public function endpoints($q = null, $sort = null, $page = null, $per_page = null)
     {
         $apiInstance = new EndpointApi(
             new Client(),
@@ -29,6 +28,7 @@ class Emnify
 
         try {
             $result = $apiInstance->getEndpoints($q, $sort, $page, $per_page);
+
             return collect($result);
         } catch (Exception $e) {
             throw new Exception('Exception when calling EndpointApi->getEndpoints: ', $e->getMessage());
