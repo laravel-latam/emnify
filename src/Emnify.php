@@ -13,15 +13,14 @@ class Emnify
 {
     protected $config;
 
-    public function __construct()
-    {
-        $token = Storage::disk('local')->get('access_token');
-        $config = Configuration::getDefaultConfiguration()
-            ->setAccessToken($token);
-    }
 
     public function endpoints($q=null, $sort=null, $page=null, $per_page=null)
     {
+        
+        $token = Storage::disk('local')->get('access_token');
+        $this->config = Configuration::getDefaultConfiguration()
+            ->setAccessToken($token);
+            
         $apiInstance = new EndpointApi(
             new Client(),
             $this->config
@@ -29,6 +28,7 @@ class Emnify
 
         try {
             $result = $apiInstance->getEndpoints($q, $sort, $page, $per_page);
+            print_r($result);
             return collect($result);
         } catch (Exception $e) {
             throw new Exception('Exception when calling EndpointApi->getEndpoints: ', $e->getMessage());
